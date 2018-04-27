@@ -6,22 +6,54 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>StudBoard</title>
+        <title>Studinator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-       <h1>StudBoard</h1>
-        <section style="text-align: right;direction: rtl">
+        <h1>Studinator</h1>
+        <section style="float: left">
+            <article>
+                <header>
+                    <h1>Aufgabe</h1>
+                    Titel: Dehnübung <br>
+                    Autor: Mr Fantastic <br>
+                </header>
+                Probieren sie bitte bis zum nächsten Mittwoch mit ihrer Zunge
+                ihren Elbogen zu berühren. Sollte dies zu schwer sein können sie immer noch
+                die Hälfte der Punktzahl kriegen, wenn sie mit ihrer Zunge die Nase berühren
+                können.
+                <footer>
+                    Copyright© Studinator<br>
+                    Kontakt:support@service.com
+                </footer>
+            </article>
+                        <form action="./blank.html" method="GET">
+                <fieldset>
+                    <label for ="textfield">Kommentar:</label>
+                <input type ="text" name="textfield" value="">
+                <label for="filefield">Datei:</label>
+                <input type ="file" name="fielefield">
+                <label for="bewertung">Bewertung</lable>
+                <input type ="radio" name="bewertung">
+                <input type="radio" name="bewertung">
+                <input type="radio" name ="bewertung">
+                <input type="radio" name ="bewertung">
+                <input type="radio" name ="bewertung">
+                <input type ="submit" name="bestätigen">
+                </fieldset>
+            </form>
+        </section>
+        <section style="text-align: right;direction: rtl;float: right">
 
-                <header><h2>Navigation</h2></header>
-                  <ul> 
-                      <li><a href = "index.html">Startseite</a></li>
-                      <li><a href = "News.html">News</a></li>
-                      <li><a href = "Projekte.html">Projekte</a></li>
-                      <li><a href="Aufgaben.html">Aufgaben</a></li>
-                      <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
-                  </ul>        
+            <header><h2>Navigation</h2></header>
+            <ul> 
+                <li><a href = "index.html">Startseite</a></li>
+                <li><a href = "News.html">News</a></li>
+                <li><a href = "Projekte.html">Projekte</a></li>
+                <li><a href="Aufgaben.html">Aufgaben</a></li>
+                <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
+            </ul>        
         </section>
     </body>
 </html>

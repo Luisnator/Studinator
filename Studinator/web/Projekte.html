@@ -9,9 +9,59 @@ and open the template in the editor.
         <title>Studinator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                font-family: "Courier New", Courier, monospace;
+            }
+            article {
+                border: 1px solid green;
+            }
+            article::first-letter{
+                font-size: 30px;
+            }
+            ul{
+                list-style-type: none;
+            }
+            body{
+                background-color: wheat;
+            }
+            article{
+                background-color: white;
+            }
+            article header,footer{
+                background-color: wheat;
+            }
+            article header{
+                position: sticky;
+                top: 0;
+            }
+            #totop{
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+            [name=textfield]{
+                background-color: wheat;
+            }
+            [name=textfield]:focus{
+                background-color: white;
+            }
+            @keyframes lefttoright{
+                from {left:0;top:0;}
+                to {left:84%;top:0;}
+            }
+            #logo{
+                position: relative;
+                animation-name: lefttoright;
+                animation-duration: 4s;
+                left:84%;
+                top:0;
+            }
+        </style>
     </head>
     <body>
-        <picture>
+        <a name="top"></a>
+        <picture id="logo">
             <source media="(min-width: 650px)" srcset="img/StudBoardLogo300x200.png">
             <source media="(min-width: 465px)" srcset="img/StudBoardLogo150x100.png">
             <img src="StudBoardLogo300x200.png" alt="Studinator_Titel">
@@ -20,7 +70,7 @@ and open the template in the editor.
         <section style="float: left">
             <article>
                 <header>
-                    <h1>Projekt</h1>
+                    <h2>Projekt</h2>
                     Titel: Chicken-Wing wiederbeleben<br>
                     Autor: Colonel Sanders<br>
                 </header>
@@ -49,7 +99,7 @@ and open the template in the editor.
                 </fieldset>
             </form>
         </section>
-        <section style="text-align: right;direction: rtl;float:right">
+        <nav style="position:fixed;right:0;top:50%;">
             <header><h2>Navigation</h2></header>
             <ul> 
                 <li><a href = "index.html">Startseite</a></li>
@@ -58,6 +108,7 @@ and open the template in the editor.
                 <li><a href="Aufgaben.html">Aufgaben</a></li>
                 <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
             </ul>        
-        </section>
+        </nav>
+        <div id="totop"><a href="#top"> top</a></div>
     </body>
 </html>

@@ -9,9 +9,37 @@ and open the template in the editor.
         <title>Studinator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                font-family: "Courier New", Courier, monospace;
+            }
+            ul{
+                list-style-type: none;
+            }
+            body{
+                background-color: wheat;
+            }
+            #totop{
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+            @keyframes lefttoright{
+                from {left:0;top:0;}
+                to {left:84%;top:0;}
+            }
+            #logo{
+                position: relative;
+                animation-name: lefttoright;
+                animation-duration: 4s;
+                left:84%;
+                top:0;
+            }
+        </style>
     </head>
     <body>
-        <picture>
+        <a name="top"></a>
+        <picture id="logo">
             <source media="(min-width: 650px)" srcset="img/StudBoardLogo300x200.png">
             <source media="(min-width: 465px)" srcset="img/StudBoardLogo150x100.png">
             <img src="StudBoardLogo300x200.png" alt="Studinator_Titel">
@@ -36,16 +64,16 @@ and open the template in the editor.
                         </fieldset>
                         </form>
                         </section>
-                        <section style="text-align: right;direction: rtl;float:right">
-
-                            <header><h2>Navigation</h2></header>
-                            <ul> 
-                                <li><a href = "index.html">Startseite</a></li>
-                                <li><a href = "News.html">News</a></li>
-                                <li><a href = "Projekte.html">Projekte</a></li>
-                                <li><a href="Aufgaben.html">Aufgaben</a></li>
-                                <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
-                            </ul>        
-                        </section>
+                        <nav style="position:fixed;right:0;top:50%;">
+            <header><h2>Navigation</h2></header>
+            <ul> 
+                <li><a href = "index.html">Startseite</a></li>
+                <li><a href = "News.html">News</a></li>
+                <li><a href = "Projekte.html">Projekte</a></li>
+                <li><a href="Aufgaben.html">Aufgaben</a></li>
+                <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
+            </ul>        
+        </nav>
+        <div id="totop"><a href="#top"> top</a></div>
                         </body>
                         </html>

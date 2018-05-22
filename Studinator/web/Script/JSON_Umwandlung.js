@@ -3,6 +3,8 @@ class Umwandlung{
     }
     stringZuObjekt(eingabe){
         let temp = JSON.parse(eingabe);
+        temp.start = new Date(temp.start);
+        temp.ende = new Date(temp.ende);
         switch (temp.className){
             case 'News' : let news = Object.assign(new News(), temp);
                 delete news.className;
@@ -23,10 +25,3 @@ class Umwandlung{
         return JSON.stringify(eingabe);
     }
 }
-
-um1 = new Umwandlung();
-news = new News("Lorem ipsum dolor sit...", "Consetetur sadipscing elitr.", "red", new Date('1995-12-17'), new Date('2018-05-16'), "Information", "www.somepage.de");
-newsString = um1.objektZuString(news);
-news1 = um1.stringZuObjekt(newsString);
-console.log(newsString);
-console.log(news1);

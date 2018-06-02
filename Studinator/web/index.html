@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head> 
-        <script src="Script/JSON_Umwandlung.js"></script>
+        <!--<script src="Script/JSON_Umwandlung.js"></script>
         <script src="Script/Popup.js"></script>
         <script src="Script/Artikel.js"></script>
         <script src="Script/Positionsabfrage.js"></script>
         <script src="Serviceworker-worker.js"></script>
-        <script src="Serviceworker.js"></script>
+        <script src="Serviceworker.js"></script>-->
+        <script src="Script/Uebersetzung.js"></script>
+        
         <title>Studinator</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +16,13 @@
             h1 {
                 font-family: "Courier New", Courier, monospace;
             }
-            #news{
+            [class=news]{
                 border: 1px solid red;
             }
-            #aufgabe{
+            [class=aufgabe]{
                 border: 1px solid blue;
             }
-            #projekt{
+            [class=projekt]{
                 border: 1px solid green;
             }
             article ::first-letter{
@@ -73,7 +75,7 @@
         </picture>
         <h1>Studinator</h1>
         <section style="float: left">
-            <article id="news">
+            <article class="news">
                 <header>
                     <h2>News</h2>
                     Titel: Kind fällt ins Klo<br>
@@ -87,7 +89,7 @@
                     Kontakt:support@service.com
                 </footer>
             </article>
-            <article id="projekt">
+            <article class="projekt">
                 <header>
                     <h2>Projekt</h2>
                     Titel: Chicken-Wing wiederbeleben<br>
@@ -101,7 +103,7 @@
                     Kontakt:support@service.com
                 </footer>
             </article>
-            <article id="aufgabe">
+            <article class="aufgabe">
                 <header>
                     <h2>Aufgabe</h2>
                     Titel: Dehnübung <br>
@@ -116,7 +118,7 @@
                 </footer>
             </article>
         </section>
-        <nav style="position:fixed;right:0;top:50%;">
+        <nav id="nav" style="position:fixed;right:0;top:50%;">
             <header><h2>Navigation</h2></header>
             <ul> 
                 <li><a href = "index.html">Startseite</a></li>

@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head> 
+    <head id="Startseite"> 
         <!--<script src="Script/JSON_Umwandlung.js"></script>
         <script src="Script/Popup.js"></script>
         <script src="Script/Artikel.js"></script>
         <script src="Script/Positionsabfrage.js"></script>
         <script src="Serviceworker-worker.js"></script>
         <script src="Serviceworker.js"></script>-->
+        <script src="Script/JSON_Umwandlung.js"></script>
+        <script src="Script/Artikel.js"></script>
+        <script src="Script/AusStorage.js"></script>
+        
         <script src="Script/Uebersetzung.js"></script>
         
         <title>Studinator</title>
@@ -16,13 +20,13 @@
             h1 {
                 font-family: "Courier New", Courier, monospace;
             }
-            [class=news]{
+            [class=News]{
                 border: 1px solid red;
             }
-            [class=aufgabe]{
+            [class=Aufgabe]{
                 border: 1px solid blue;
             }
-            [class=projekt]{
+            [class=Projekt]{
                 border: 1px solid green;
             }
             article ::first-letter{
@@ -74,8 +78,8 @@
             <img src="StudBoardLogo300x200.png" alt="Studinator_Titel">
         </picture>
         <h1>Studinator</h1>
-        <section style="float: left">
-            <article class="news">
+        <section id="artikel" style="float: left">
+            <!--<article class="News">
                 <header>
                     <h2>News</h2>
                     Titel: Kind fällt ins Klo<br>
@@ -89,7 +93,7 @@
                     Kontakt:support@service.com
                 </footer>
             </article>
-            <article class="projekt">
+            <article class="Projekt">
                 <header>
                     <h2>Projekt</h2>
                     Titel: Chicken-Wing wiederbeleben<br>
@@ -103,7 +107,7 @@
                     Kontakt:support@service.com
                 </footer>
             </article>
-            <article class="aufgabe">
+            <article class="Aufgabe">
                 <header>
                     <h2>Aufgabe</h2>
                     Titel: Dehnübung <br>
@@ -116,7 +120,7 @@
                     Copyright© Studinator<br>
                     Kontakt:support@service.com
                 </footer>
-            </article>
+            </article>-->
         </section>
         <nav id="nav" style="position:fixed;right:0;top:50%;">
             <header><h2>Navigation</h2></header>

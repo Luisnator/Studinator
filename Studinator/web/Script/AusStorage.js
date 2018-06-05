@@ -1,10 +1,10 @@
 console.log(localStorage);
 console.log(Object.keys(localStorage));
 
-function artikelErsteller() {
+function artikelErsteller(anzahlArtikel) {
     seite = document.head.getAttribute("id");
     var keyListe = Object.keys(localStorage).reverse();
-    for (var i = 0; i < keyListe.length && i < 10; i++) {
+    for (var i = 0; i < keyListe.length && i < anzahlArtikel; i++) {
         artikel = Creator.inStorage(keyListe[i]);
         if (seite == "Startseite" || artikel.constructor.name == seite) {
             element = document.createElement("article");
@@ -125,4 +125,8 @@ function artikelErsteller() {
     }
 }
 
-window.addEventListener('load', artikelErsteller, false);
+function initialisierung(){
+    artikelErsteller(5);
+}
+
+window.addEventListener('load', initialisierung, false);

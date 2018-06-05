@@ -20,7 +20,7 @@ function artikelErsteller(anzahlArtikel) {
             header.appendChild(texttitel);
             element.appendChild(header);
 
-            if (artikel.inhalt.length > 100 && seite == "Startseite") {
+            if (artikel.inhalt.length > 150 && seite == "Startseite") {
                 textinhalt = document.createTextNode(artikel.inhalt.slice(0, 150) + "...");
             } else {
                 textinhalt = document.createTextNode(artikel.inhalt);

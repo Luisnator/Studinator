@@ -1,6 +1,3 @@
-console.log(localStorage);
-console.log(Object.keys(localStorage));
-
 function artikelErsteller(anzahlArtikel) {
     seite = document.head.getAttribute("id");
     var keyListe = Object.keys(localStorage).reverse();
@@ -16,26 +13,29 @@ function artikelErsteller(anzahlArtikel) {
             textklasse = document.createTextNode(artikel.constructor.name);
             h2.appendChild(textklasse);
             header.appendChild(h2);
-            texttitel = document.createTextNode("Titel: " + artikel.titel);
+            texttitel = document.createTextNode(artikel.titel);
             header.appendChild(texttitel);
             element.appendChild(header);
 
+            p = document.createElement("p");
             if (artikel.inhalt.length > 150 && seite == "Startseite") {
-                textinhalt = document.createTextNode(artikel.inhalt.slice(0, 150) + "...");
+                p.innerHTML = artikel.inhalt.slice(0, 150) + "...";
+                //textinhalt = document.createTextNode(artikel.inhalt.slice(0, 150) + "...");
             } else {
-                textinhalt = document.createTextNode(artikel.inhalt);
+                p.innerHTML = artikel.inhalt;
+                //textinhalt = document.createTextNode(artikel.inhalt);
             }
-            element.appendChild(textinhalt);
+            element.appendChild(p);
 
             if (seite == "Startseite") {
                 footer = document.createElement("footer");
                 a = document.createElement("a");
                 if (artikel.constructor.name == "News") {
-                    a.setAttribute("href", "News.html");
+                    a.setAttribute("href", "News.html?artikel=" + artikel.titel);
                 } else if (artikel.constructor.name == "Projekt") {
-                    a.setAttribute("href", "Projekte.html");
+                    a.setAttribute("href", "Projekte.html?artikel=" + artikel.titel);
                 } else if (artikel.constructor.name == "Aufgabe") {
-                    a.setAttribute("href", "Aufgaben.html");
+                    a.setAttribute("href", "Aufgaben.html?artikel=" + artikel.titel);
                 }
                 textlink = document.createTextNode("Lesen sie hier weiter");
                 a.appendChild(textlink);
@@ -50,8 +50,9 @@ function artikelErsteller(anzahlArtikel) {
             } else {
                 form = document.createElement("form");
                 form.setAttribute("class", "kommentar");
-                form.setAttribute("action", "./blank.html");
+                form.setAttribute("action", "./"+document.head.getAttribute("id")+".html");
                 form.setAttribute("method", "GET");
+                form.setAttribute("id", i);
 
                 fieldset = document.createElement("fieldset");
 
@@ -112,6 +113,7 @@ function artikelErsteller(anzahlArtikel) {
                 inputbes = document.createElement("input");
                 inputbes.setAttribute("type", "submit");
                 inputbes.setAttribute("name", "bestätigen");
+                inputbes.onclick = Kommentar.kommentarZuStorage(i);
                 fieldset.appendChild(inputbes);
 
                 form.appendChild(fieldset);
@@ -126,7 +128,7 @@ function artikelErsteller(anzahlArtikel) {
 }
 
 function initialisierung(){
-    artikelErsteller(5);
+    artikelErsteller(20);
 }
 
 window.addEventListener('load', initialisierung, false);

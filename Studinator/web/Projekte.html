@@ -8,9 +8,12 @@ and open the template in the editor.
     <head id="Projekt">
         <script src="Script/JSON_Umwandlung.js"></script>
         <script src="Script/Artikel.js"></script>
+        <script src="Script/LadeArtikel.js"></script>
         <script src="Script/AusStorage.js"></script>
         <script src="Script/ScrollArtikel.js"></script>
         <script src="Script/Kommentare.js"></script>
+        
+        <script src="Script/LadeMedien.js"></script>
         
         <script src="Script/Uebersetzung.js"></script>
         <title>Studinator</title>
@@ -69,9 +72,9 @@ and open the template in the editor.
     <body>
         <a name="top"></a>
         <picture id="logo">
-            <source media="(min-width: 650px)" srcset="img/StudBoardLogo300x200.png">
-            <source media="(min-width: 465px)" srcset="img/StudBoardLogo150x100.png">
-            <img src="StudBoardLogo300x200.png" alt="Studinator_Titel">
+            <source id="img1" media="(min-width: 650px)" >
+            <source id="img2" media="(min-width: 465px)" >
+            <img id="img3"  alt="Studinator_Titel">
         </picture>
         <h1>Studinator</h1>
         <section style="float: left">

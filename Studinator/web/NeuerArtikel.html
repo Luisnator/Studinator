@@ -6,6 +6,11 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <script src="Script/JSON_Umwandlung.js"></script>
+        <script src="Script/Artikel.js"></script>
+        <script src="Script/LadeMedien.js"></script>
+        <script src="Script/SendeArtikel.js"></script>
+        <script src="Script/ErstelleArtikel.js"></script>
         <script src="Script/Uebersetzung.js"></script>
         <title>Studinator</title>
         <meta charset="UTF-8">
@@ -40,41 +45,44 @@ and open the template in the editor.
     </head>
     <body>
         <a name="top"></a>
-        <picture id="logo">
-            <source media="(min-width: 650px)" srcset="img/StudBoardLogo300x200.png">
-            <source media="(min-width: 465px)" srcset="img/StudBoardLogo150x100.png">
-            <img src="StudBoardLogo300x200.png" alt="Studinator_Titel">
-        </picture>
-        <h1>Studinator</h1>
-        <section style="float:left">
-            <form action="./blank.html" method="GET">
-                <fieldset>
-                    <label for ="textfield">Artikeltext:</label>
-                    <input type ="text" name="textfield" value=""><br>
-                    <label for="art">Artikelart</label>
-                        <input type ="radio" name="art" value="News">News
-                        <input type="radio" name="art" value="Projekt">Projekt
-                        <input type="radio" name ="art" value="Aufgaben">Aufgaben<br>
-                         <label for="start">Startdatum</label>
-                         <input type="date" name="start"><br>
-                         <label for="ende">Enddatum</label>
-                         <input type="date" name="ende"><br>
-                         <label for="farbe">Farbe der Überschrift>
-                             <input type="color" name="farbe">
-                        <input type ="submit" name="bestätigen">
-                        </fieldset>
-                        </form>
-                        </section>
-        <nav id="nav" style="position:fixed;right:0;top:50%;">
-            <header><h2>Navigation</h2></header>
-            <ul> 
-                <li><a href = "index.html">Startseite</a></li>
-                <li><a href = "News.html">News</a></li>
-                <li><a href = "Projekte.html">Projekte</a></li>
-                <li><a href="Aufgaben.html">Aufgaben</a></li>
-                <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
-            </ul>        
-        </nav>
-        <div id="totop"><a href="#top"> top</a></div>
-                        </body>
-                        </html>
+    <picture id="logo">
+        <source id="img1" media="(min-width: 650px)" >
+        <source id="img2" media="(min-width: 465px)" >
+        <img id="img3"  alt="Studinator_Titel">
+    </picture>
+    <h1>Studinator</h1>
+    <section style="float:left">
+        <form action="./NeuerArtikel.html" method="GET">
+            <fieldset>
+                <label for ="textfield">Titel:</label>
+                <input type ="text" name="texttitel" value=""><br>
+                <label for ="textfield">Inhalt:</label>
+                <input type ="text" name="textinhalt" value=""><br>
+                <label for="art">Artikelart</label>
+                <input type ="radio" name="art" value="News">News
+                <input type="radio" name="art" value="Projekt">Projekt
+                <input type="radio" name ="art" value="Aufgaben">Aufgaben<br>
+                <label for="start">Startdatum</label>
+                <input type="date" name="start"><br>
+                <label for="ende">Enddatum</label>
+                <input type="date" name="ende"><br>
+                <label for="farbe">Farbe der Überschrift
+                    <input type="color" name="farbe">
+                    <input type ="submit" name="bestätigen">
+                    <!--<button onclick="artikelErstellen()">Absenden</button>-->
+            </fieldset>
+        </form>
+    </section>
+    <nav id="nav" style="position:fixed;right:0;top:50%;">
+        <header><h2>Navigation</h2></header>
+        <ul> 
+            <li><a href = "index.html">Startseite</a></li>
+            <li><a href = "News.html">News</a></li>
+            <li><a href = "Projekte.html">Projekte</a></li>
+            <li><a href="Aufgaben.html">Aufgaben</a></li>
+            <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
+        </ul>        
+    </nav>
+    <div id="totop"><a href="#top"> top</a></div>
+</body>
+</html>

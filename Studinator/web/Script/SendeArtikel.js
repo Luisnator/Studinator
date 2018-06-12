@@ -13,22 +13,3 @@ function sendeArtikel(str){
     sender.onreadystatechange = statusAenderung;
     sender.send(str);
 }
-
-
-
-
-
-var xhr = new XMLHttpRequest();
-xhr.open("PUT", '/server', true);
-
-xhr.setRequestHeader("Content-type", "application/json");
-
-xhr.onreadystatechange = function() {//Call a function when the state changes.
-    if(xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-        // Request finished. Do processing here.
-    }
-}
-xhr.send("foo=bar&lorem=ipsum"); 
-// xhr.send(new Blob()); 
-// xhr.send(new Int8Array()); 
-// xhr.send(document);

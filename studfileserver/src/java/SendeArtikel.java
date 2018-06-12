@@ -4,9 +4,13 @@
  * and open the template in the editor.
  */
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +22,8 @@ import org.apache.commons.io.FileUtils;
  *
  * @author Phill
  */
-@WebServlet(urlPatterns = {"/SendeMedien"})
-public class SendeMedien extends HttpServlet {
+@WebServlet(urlPatterns = {"/SendeArtikel"})
+public class SendeArtikel extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,34 +36,30 @@ public class SendeMedien extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String file = request.getParameter("name");
+        File f = new File("C:\\Projects\\GitHub\\Studinator\\studfileserver\\web\\json\\");
+        ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
 
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "filename=\"" + file + "\"");
-        if (file.endsWith(".png")) {
-            response.setHeader("ContentType", "image/png");
-        } else if (file.endsWith(".mp4")) {
-            response.setHeader("ContentType", "video/mp4");
-        }
-        File srcFile = new File("C:\\Projects\\GitHub\\Studinator\\studfileserver\\web\\media\\" + file);
-        FileUtils.copyFile(srcFile, response.getOutputStream());
+        response.setHeader("Content-Disposition", "filename=\"news1.json\"");
+        //File srcFile = new File("C:\\Projects\\GitHub\\Studinator\\studfileserver\\web\\json\\news1.json");
+        //FileUtils.copyFile(srcFile, response.getOutputStream());
 
-        /*response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SendeMedien</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<picture id=\"logo\">");
-            out.println("<source media=\"(min-width: 650px)\" srcset=\"../../img/StudBoardLogo300x200.png\">");
-            out.println("<source media=\"(min-width: 465px)\" srcset=\"../../img/StudBoardLogo150x100.png\">");
-            out.println("<img src=\"StudBoardLogo300x200.png\" alt=\"Studinator_Titel\">");
-            out.println("<h1>Servlet SendeMedien at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }*/
+            for (File file : files) {
+                FileReader fr = new FileReader(file);
+                BufferedReader br = new BufferedReader(fr);
+                String content = "";
+                String next = "";
+                while (next != null) {
+                    content += next;
+                    next = br.readLine();
+                }
+
+                br.close();
+                out.println(content + "%20");
+            }
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

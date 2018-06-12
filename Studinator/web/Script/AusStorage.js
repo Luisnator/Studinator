@@ -130,5 +130,12 @@ function artikelErsteller(anzahlArtikel) {
 function initialisierung(){
     artikelErsteller(20);
 }
+function checkStorage(){
+    if(localStorage.length <= 0){
+        ladeArtikel();
+    }else{
+        initialisierung();
+    }
+}
 
-window.addEventListener('load', initialisierung, false);
+window.addEventListener('load', checkStorage, false);

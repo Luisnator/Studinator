@@ -20,7 +20,6 @@ public class ExpiresFilter implements Filter
     @Override
     public void doFilter( ServletRequest request, ServletResponse response, FilterChain chain )
                           throws IOException, ServletException {
-        System.out.println("Hello1");
         if ( days > -1 ) {
             Calendar c = Calendar.getInstance();
             c.setTime( new Date() );
@@ -37,8 +36,7 @@ public class ExpiresFilter implements Filter
     }
 
     @Override
-    public void init( FilterConfig filterConfig ) {
-        System.out.println("Hello2");        
+    public void init( FilterConfig filterConfig ) {        
         String expiresAfter = filterConfig.getInitParameter("days");
         if ( expiresAfter != null ) {
             try {

@@ -40,7 +40,7 @@ public class SendeArtikel extends HttpServlet {
         ArrayList<File> files = new ArrayList<File>(Arrays.asList(f.listFiles()));
 
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "filename=\"news1.json\"");
+        //response.setHeader("Content-Disposition", "filename=\"news1.json\"");
         //File srcFile = new File("C:\\Projects\\GitHub\\Studinator\\studfileserver\\web\\json\\news1.json");
         //FileUtils.copyFile(srcFile, response.getOutputStream());
 

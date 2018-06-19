@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<aufgabe>
+    <ende>2018-06-19T19:08:41.655+02:00</ende>
+    <id>1</id>
+    <inhalt>AufgabeAufgabeAufgabeAufgabeAufgabe</inhalt>
+    <start>2018-06-19T19:08:41.655+02:00</start>
+    <titel>Aufgabe1</titel>
+    <titelfarbe>blue</titelfarbe>
+    <className>Aufgabe</className>
+    <fach>Mateh2.0</fach>
+</aufgabe>

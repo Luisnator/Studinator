@@ -1,4 +1,4 @@
-var statusAenderung = function () {
+var statusAenderungKommentare = function () {
     if (this.readyState == 4 && this.status == 200) {
         /*um = new Umwandlung();
         //console.log(um.stringZuObjekt(this.responseText));
@@ -10,28 +10,24 @@ var statusAenderung = function () {
                 localStorage.setItem(obj.titel, str);
             }
         }*/
+        console.log(this.response);
         um = new Umwandlung();
-        obj = um.stringZuObjekt(JSON.stringify(JSON.parse(JSON.stringify(this.response)).news));
-        if (obj.titel != undefined) {
-                localStorage.setItem(obj.titel, JSON.stringify(JSON.parse(JSON.stringify(this.response)).news));
-            }
+        //obj = um.stringZuObjekt(JSON.stringify(JSON.parse(JSON.stringify(this.response)).kommentar));
         console.log(this.getAllResponseHeaders());
-
-        initialisierung();
     } else {
         console.log("readyState: " + this.readyState + "; Status: " + this.status);
     }
 };
-function ladeArtikel() {
+function ladeKommentar() {
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Artikel/byId?id=6");
+    requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Kommentar/byId?id=6");
     requestor.responseType = "json";
-    requestor.onreadystatechange = statusAenderung;
+    requestor.onreadystatechange = statusAenderungKommentare;
     requestor.send();
 }
 
 
-var statusAenderungVorschau = function () {
+var statusAenderungKommentarVorschau = function () {
     if (this.readyState == 4 && this.status == 200) {
         console.log(this.response);
         console.log(this.getAllResponseHeaders());
@@ -40,10 +36,17 @@ var statusAenderungVorschau = function () {
     }
 };
 
-function ladeArtikelVorschau(){
+function ladeKommentarVorschau(){
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Artikel");
+    requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Kommentar");
     requestor.responseType = "json";
-    requestor.onreadystatechange = statusAenderungVorschau;
+    requestor.onreadystatechange = statusAenderungKommentarVorschau;
     requestor.send();
 }
+
+function testfunc(){
+    ladeKommentarVorschau();
+    ladeKommentar();
+}
+
+window.addEventListener('load', testfunc, false);

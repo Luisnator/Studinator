@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<news>
+    <ende>2018-06-19T19:08:41.656+02:00</ende>
+    <id>2</id>
+    <inhalt>NewsNewsNewsNewsNews</inhalt>
+    <start>2018-06-19T19:08:41.656+02:00</start>
+    <titel>News1</titel>
+    <titelfarbe>red</titelfarbe>
+    <className>News</className>
+    <kategorie>Information</kategorie>
+    <quelle>www.somesource.com</quelle>
+</news>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<projekt>
+    <ende>2018-06-19T19:08:41.658+02:00</ende>
+    <id>3</id>
+    <inhalt>ProjektProjektProjektProjektProjekt</inhalt>
+    <start>2018-06-19T19:08:41.658+02:00</start>
+    <titel>Projekt1</titel>
+    <titelfarbe>green</titelfarbe>
+    <anzPlaetze>0</anzPlaetze>
+    <className>Projekt</className>
+    <professor>Wilhelm</professor>
+</projekt>

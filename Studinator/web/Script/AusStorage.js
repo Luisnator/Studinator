@@ -52,7 +52,7 @@ function artikelErsteller(anzahlArtikel) {
                 form.setAttribute("class", "kommentar");
                 form.setAttribute("action", "./"+document.head.getAttribute("id")+".html");
                 form.setAttribute("method", "GET");
-                form.setAttribute("id", i);
+                form.setAttribute("id", "i" + i);
 
                 fieldset = document.createElement("fieldset");
 
@@ -87,27 +87,27 @@ function artikelErsteller(anzahlArtikel) {
 
                 inputbew1 = document.createElement("input");
                 inputbew1.setAttribute("type", "radio");
-                inputbew1.setAttribute("name", "bewertung");
+                inputbew1.setAttribute("name", "bewertung1");
                 fieldset.appendChild(inputbew1);
 
                 inputbew2 = document.createElement("input");
                 inputbew2.setAttribute("type", "radio");
-                inputbew2.setAttribute("name", "bewertung");
+                inputbew2.setAttribute("name", "bewertung2");
                 fieldset.appendChild(inputbew2);
 
                 inputbew3 = document.createElement("input");
                 inputbew3.setAttribute("type", "radio");
-                inputbew3.setAttribute("name", "bewertung");
+                inputbew3.setAttribute("name", "bewertung3");
                 fieldset.appendChild(inputbew3);
 
                 inputbew4 = document.createElement("input");
                 inputbew4.setAttribute("type", "radio");
-                inputbew4.setAttribute("name", "bewertung");
+                inputbew4.setAttribute("name", "bewertung4");
                 fieldset.appendChild(inputbew4);
 
                 inputbew5 = document.createElement("input");
                 inputbew5.setAttribute("type", "radio");
-                inputbew5.setAttribute("name", "bewertung");
+                inputbew5.setAttribute("name", "bewertung5");
                 fieldset.appendChild(inputbew5);
 
                 inputbes = document.createElement("input");
@@ -133,6 +133,7 @@ function initialisierung(){
 function checkStorage(){
     if(localStorage.length <= 0){
         ladeArtikel();
+        ladeArtikelVorschau();
     }else{
         initialisierung();
     }

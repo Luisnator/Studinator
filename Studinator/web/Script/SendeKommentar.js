@@ -1,4 +1,4 @@
-var statusAenderung = function(){
+var statusAenderungKommentar = function(){
     if (this.readyState == 4 && this.status == 200){
         console.log("Antwort erhalten: \n" + this.response);
         console.log(this.getAllResponseHeaders());
@@ -6,10 +6,10 @@ var statusAenderung = function(){
         console.log("readyState: " + this.readyState + "; Status: " + this.status);
     }
 };
-function sendeArtikel(str){
+function sendeKommentar(str){
     let sender = new XMLHttpRequest();
-    sender.open("POST", "http://localhost:8080/studboardREST/webresources/Artikel");
+    sender.open("POST", "http://localhost:8080/studboardREST/webresources/Kommentar");
     sender.setRequestHeader("Content-type", "application/json");
-    sender.onreadystatechange = statusAenderung;
+    sender.onreadystatechange = statusAenderungKommentar;
     sender.send(str);
 }

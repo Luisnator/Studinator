@@ -8,9 +8,9 @@ var statusAenderung1 = function(){
         var img2 = document.querySelector( "#img2" );
         img2.srcset = imageUrl;
         
-        console.log(this.getAllResponseHeaders());
+        //console.log(this.getAllResponseHeaders());
     }else{
-        console.log("readyState: " + this.readyState + "; Status: " + this.status);
+        //console.log("readyState: " + this.readyState + "; Status: " + this.status);
     }
 };
 
@@ -24,9 +24,9 @@ var statusAenderung2 = function(){
         var img = document.querySelector( "#img1" );
         img.srcset = imageUrl;
         
-        console.log(this.getAllResponseHeaders());
+        //console.log(this.getAllResponseHeaders());
     }else{
-        console.log("readyState: " + this.readyState + "; Status: " + this.status);
+        //console.log("readyState: " + this.readyState + "; Status: " + this.status);
     }
 };
 function ladeBild(){

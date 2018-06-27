@@ -5,32 +5,56 @@
  */
 package resourcen;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
+
 
 /**
  *
  * @author Phill
  */
+@Entity
+@Table(name = "artikel")
+
+@NamedQueries({
+    @NamedQuery(name="Artikel.findall",
+            query="SELECT a FROM artikel a"),
+    @NamedQuery(name="Arikel.findById",
+            query="SELECT a FROM artikel a WHERE a.id = :id")
+})
+
 @XmlRootElement
-public class Artikel {
+public class Artikel implements Serializable {
     
+    @Id
     private int id;
+    @Column
     private String inhalt;
+    @Column
     private String titel;
+    @Column
     private String titelfarbe;
-    private Date start;
-    private Date ende;
+    @Column
+    private Date starts;
+    @Column
+    private Date endes;
     
     public Artikel(){}
     
-    public Artikel(int id, String inhalt, String titel, String titelfarbe, Date start, Date ende){
+    public Artikel(int id, String inhalt, String titel, String titelfarbe, Date starts, Date endes){
         this.id = id;
         this.inhalt = inhalt;
         this.titel = titel;
         this.titelfarbe = titelfarbe;
-        this.start = start;
-        this.ende = ende;
+        this.starts = starts;
+        this.endes = endes;
     }
 
     public String getInhalt() {
@@ -45,12 +69,12 @@ public class Artikel {
         return titelfarbe;
     }
 
-    public Date getStart() {
-        return start;
+    public Date getStarts() {
+        return starts;
     }
 
-    public Date getEnde() {
-        return ende;
+    public Date getEndes() {
+        return endes;
     }
 
     public void setInhalt(String inhalt) {
@@ -65,12 +89,12 @@ public class Artikel {
         this.titelfarbe = titelfarbe;
     }
 
-    public void setStart(Date start) {
-        this.start = start;
+    public void setStarts(Date start) {
+        this.starts = start;
     }
 
-    public void setEnde(Date ende) {
-        this.ende = ende;
+    public void setEndes(Date ende) {
+        this.endes = ende;
     }
 
     public int getId() {

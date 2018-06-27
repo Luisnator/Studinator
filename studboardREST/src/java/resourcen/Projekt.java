@@ -5,18 +5,27 @@
  */
 package resourcen;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Phill
  */
+@Entity
+//@Table(name = "projket")
 @XmlRootElement
-public class Projekt extends Artikel{
+public class Projekt extends Artikel implements Serializable{
     
+    @Column
     private String professor;
+    @Column
     private int anzPlaetze;
+    @Column
     private String className = "Projekt";
     
     public Projekt(){}

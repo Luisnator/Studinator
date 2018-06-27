@@ -31,14 +31,16 @@ var statusAenderung2 = function(){
 };
 function ladeBild(){
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:8080/studfileserver/SendeMedien?name=StudBoardLogo150x100.png");
+    requestor.open("GET", "http://localhost:38142/studfileserver/SendeMedien?name=StudBoardLogo150x100.png");
+    //requestor.open("GET", "http://localhost:8080/studfileserver/SendeMedien?name=StudBoardLogo150x100.png");
     //requestor.open("GET", "http://localhost:8080/studfileserver/img/StudBoardLogo150x100.png");
     requestor.responseType = "arraybuffer";
     requestor.onreadystatechange = statusAenderung1;
     requestor.send();
     
     let requestor2 = new XMLHttpRequest();
-    requestor2.open("GET", "http://localhost:8080/studfileserver/SendeMedien?name=StudBoardLogo300x200.png");
+    requestor2.open("GET", "http://localhost:38142/studfileserver/SendeMedien?name=StudBoardLogo300x200.png");
+    //requestor2.open("GET", "http://localhost:8080/studfileserver/SendeMedien?name=StudBoardLogo300x200.png");
     //requestor2.open("GET", "http://localhost:8080/studfileserver/img/StudBoardLogo300x200.png");
     requestor2.responseType = "arraybuffer";
     requestor2.onreadystatechange = statusAenderung2;

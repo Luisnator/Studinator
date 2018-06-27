@@ -5,17 +5,25 @@
  */
 package resourcen;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Phill
  */
+@Entity
+//@Table(name = "aufgabe")
 @XmlRootElement
-public class Aufgabe extends Artikel{
+public class Aufgabe extends Artikel implements Serializable{
     
+    @Column
     private String fach;
+    @Column
     private String className = "Aufgabe";
     
     public Aufgabe(){}

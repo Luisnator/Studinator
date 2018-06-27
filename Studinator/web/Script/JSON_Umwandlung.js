@@ -19,6 +19,8 @@ class Umwandlung{
                 return aufgabe;
             case 'Kommentar' : let kommentar = Object.assign(new Kommentar(), temp);
                 delete kommentar.className;
+                delete kommentar.start;
+                delete kommentar.ende;
                 return kommentar;
             default : return -1;
         }

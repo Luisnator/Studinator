@@ -18,6 +18,7 @@ public class Kommentar {
     private int bewertung;
     private String inhalt;
     private long article_id = 0;
+    private String className = "Kommentar";
     
     public Kommentar(){}
     
@@ -57,6 +58,14 @@ public class Kommentar {
 
     public void setArticle_id(long article_id) {
         this.article_id = article_id;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
     
 }

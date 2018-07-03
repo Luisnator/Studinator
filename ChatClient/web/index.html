@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Chat</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="./Scripts/GET_Chat.js"></script>
+        <script src="./Scripts/POST_Chat.js"></script>
+        <script src="./Scripts/RequestManager.js" defer></script>
+        
+        <style>
+            [name=chat]{
+                width:80%;
+                height:70%;
+                position:absolute;
+                resize: none;
+            }
+            [name=input]{
+                width:80%;
+                height:20%;
+                position: relative;
+                top: 700px;
+                resize: none;
+            }
+            [name=user]{
+                width:5%;
+                height:5%;
+                position: absolute;
+                right: 9%;
+                resize: none;
+            }
+            [class=confirmUsername]{
+                position: absolute;
+                right: 9%;
+                top: 7%;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea disabled name="chat"></textarea>
+        <textarea disabled name="input"></textarea>
+        <textarea name="user"></textarea>
+        <button class="confirmUsername" type="button" onclick="confirmButton()">Bestätigen</button>
+    </body>
+</html>

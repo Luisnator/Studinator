@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <script src="Script/JSON_Umwandlung.js"></script>
+        <script src="Script/Artikel.js"></script>
+        <script src="Script/LadeMedien.js"></script>
+        <script src="Script/SendeArtikel.js"></script>
+        <script src="Script/ErstelleArtikel.js"></script>
+        <script src="Script/Uebersetzung.js"></script>
+        <title>Studinator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1 {
+                font-family: "Courier New", Courier, monospace;
+            }
+            ul{
+                list-style-type: none;
+            }
+            body{
+                background-color: wheat;
+            }
+            #totop{
+                position: fixed;
+                bottom: 0;
+                right: 0;
+            }
+            @keyframes lefttoright{
+                from {left:0;top:0;}
+                to {left:84%;top:0;}
+            }
+            #logo{
+                position: relative;
+                animation-name: lefttoright;
+                animation-duration: 4s;
+                left:84%;
+                top:0;
+            }
+        </style>
+    </head>
+    <body>
+        <a name="top"></a>
+    <picture id="logo">
+        <source id="img1" media="(min-width: 650px)" >
+        <source id="img2" media="(min-width: 465px)" >
+        <img id="img3"  alt="Studinator_Titel">
+    </picture>
+    <h1>Studinator</h1>
+    <section style="float:left">
+        <form action="./NeuerArtikel.html" method="GET">
+            <fieldset>
+                <label for ="textfield">Titel:</label>
+                <input type ="text" name="texttitel" value=""><br>
+                <label for ="textfield">Inhalt:</label>
+                <input type ="text" name="textinhalt" value=""><br>
+                <label for="art">Artikelart</label>
+                <input type ="radio" name="art" value="News">News
+                <input type="radio" name="art" value="Projekt">Projekt
+                <input type="radio" name ="art" value="Aufgaben">Aufgaben<br>
+                <label for="start">Startdatum</label>
+                <input type="date" name="start"><br>
+                <label for="ende">Enddatum</label>
+                <input type="date" name="ende"><br>
+                <label for="farbe">Farbe der Überschrift
+                    <input type="color" name="farbe">
+                    <input type ="submit" name="bestätigen">
+                    <!--<button onclick="artikelErstellen()">Absenden</button>-->
+            </fieldset>
+        </form>
+    </section>
+    <nav id="nav" style="position:fixed;right:0;top:50%;">
+        <header><h2>Navigation</h2></header>
+        <ul> 
+            <li><a href = "index.html">Startseite</a></li>
+            <li><a href = "News.html">News</a></li>
+            <li><a href = "Projekte.html">Projekte</a></li>
+            <li><a href="Aufgaben.html">Aufgaben</a></li>
+            <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
+        </ul>        
+    </nav>
+    <div id="totop"><a href="#top"> top</a></div>
+</body>
+</html>

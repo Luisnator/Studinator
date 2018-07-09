@@ -16,7 +16,7 @@ var statusAenderung = function () {
 };
 function ladeArtikel() {
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:38142/studboardRESTtwo/webresources/Artikel/byId?id=6");
+    requestor.open("GET", "http://localhost:38142/studboardREST2/webresources/Artikel/byId?id=6");
     //requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Artikel/byId?id=6");
     requestor.responseType = "json";
     requestor.onreadystatechange = statusAenderung;
@@ -26,16 +26,16 @@ function ladeArtikel() {
 
 var statusAenderungVorschau = function () {
     if (this.readyState == 4 && this.status == 200) {
-        //console.log(this.response);
-        //console.log(this.getAllResponseHeaders());
+        console.log(this.response);
+        console.log(this.getAllResponseHeaders());
     } else {
-        //console.log("readyState: " + this.readyState + "; Status: " + this.status);
+        console.log("readyState: " + this.readyState + "; Status: " + this.status);
     }
 };
 
 function ladeArtikelVorschau(){
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:38142/studboardRESTtwo/webresources/Artikel");
+    requestor.open("GET", "http://localhost:8080/studboardREST2/webresources/Artikel");
     //requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Artikel");
     requestor.responseType = "json";
     requestor.onreadystatechange = statusAenderungVorschau;

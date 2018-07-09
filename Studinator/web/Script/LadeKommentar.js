@@ -11,7 +11,7 @@ var statusAenderungKommentare = function () {
 };
 function ladeKommentar() {
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:38142/studboardRESTtwo/webresources/Kommentar/byId?id=6");
+    requestor.open("GET", "http://localhost:8080/studboardREST2/webresources/Kommentar/byId?id=6");
     //requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Kommentar/byId?id=6");
     requestor.responseType = "json";
     requestor.onreadystatechange = statusAenderungKommentare;
@@ -30,7 +30,7 @@ var statusAenderungKommentarVorschau = function () {
 
 function ladeKommentarVorschau(){
     let requestor = new XMLHttpRequest();
-    requestor.open("GET", "http://localhost:38142/studboardRESTtwo/webresources/Kommentar");
+    requestor.open("GET", "http://localhost:8080/studboardREST2/webresources/Kommentar");
     //requestor.open("GET", "http://localhost:8080/studboardREST/webresources/Kommentar");
     requestor.responseType = "json";
     requestor.onreadystatechange = statusAenderungKommentarVorschau;

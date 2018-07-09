@@ -1,145 +1,125 @@
-<!DOCTYPE html>
-<html>
-    <head id="Startseite"> 
-        <!--<script src="Script/JSON_Umwandlung.js"></script>
-        <script src="Script/Popup.js"></script>
-        <script src="Script/Artikel.js"></script>
-        <script src="Script/Positionsabfrage.js"></script>
-        <script src="Serviceworker-worker.js"></script>
-        <script src="Serviceworker.js"></script>-->
-        <script src="Script/JSON_Umwandlung.js"></script>
-        <script src="Script/Kommentar.js"></script>
-        <script src="Script/Artikel.js"></script>
-        <script src="Script/LadeArtikel.js"></script>
-        <script src="Script/AusStorage.js"></script>
-        <script src="Script/ScrollArtikel.js"></script>
-        <script src="Script/Menue.js"></script>
-        
-        <script src="Script/LadeMedien.js"></script>
-        <script src="Script/LadeKommentar.js"></script>
-        
-        <script src="Script/Uebersetzung.js"></script>
-        
-        <title>Studinator</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            h1 {
-                font-family: "Courier New", Courier, monospace;
-            }
-            [class=News]{
-                border: 1px solid red;
-            }
-            [class=Aufgabe]{
-                border: 1px solid blue;
-            }
-            [class=Projekt]{
-                border: 1px solid green;
-            }
-            article ::first-letter{
-                font-size: 40px;
-            }
-            ul{
-                list-style-type: none;
-            }
-            body{
-                background-color: wheat;
-            }
-            article{
-                background-color: white;
-            }
-            article header,footer{
-                background-color: wheat;
-            }
-            #totop{
-                position: fixed;
-                bottom: 0;
-                right: 0;
-            }
-            @keyframes lefttoright{
-                from {left:0;top:0;}
-                to {left:84%;top:0;}
-            }
-            #logo{
-                position: relative;
-                animation-name: lefttoright;
-                animation-duration: 4s;
-                left:84%;
-                top:0;
-            }
-            /*
-            body {
-                margin: 0;
-                padding: 0.5%;
-                width: 99.5%;
-                height: 99.5%;
-            }
-            */
-        </style>
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        <title>Startseite</title>
     </head>
     <body>
-        <a name="top"></a>
-         <picture id="logo">
-            <source id="img1" media="(min-width: 650px)" >
-            <source id="img2" media="(min-width: 465px)" >
-            <img id="img3"  alt="Studinator_Titel">
-        </picture>
         <h1>Studinator</h1>
-        <section id="artikel" style="float: left">
-            <!--<article class="News">
-                <header>
-                    <h2>News</h2>
-                    Titel: Kind fällt ins Klo<br>
-                    Autor: Gundula Gausel
-                </header>
-                Das Kind Dummer Dieter ist bei einer braunen Not zur Toilette gestürmt und ist
-                dabei in die Toilette gefallen. Sei dies noch nicht genug...
-                <footer>
-                    <a href ="News.html">Lesen sie hier weiter</a><br>
-                    Copyright© Studinator<br>
-                    Kontakt:support@service.com
-                </footer>
-            </article>
-            <article class="Projekt">
-                <header>
-                    <h2>Projekt</h2>
-                    Titel: Chicken-Wing wiederbeleben<br>
-                    Autor: Colonel Sanders<br>
-                </header>
-                Ich habe Probleme mein Chicken-Wing wiederzubeleben und eröffne hiermit
-                ein Projekt wo jeder mitarbeiten darf. Es wird Umgang mit ...
-                <footer>
-                    <a href="Projekte.html">Lesen sie hier weiter</a><br>
-                    Copyright© Studinator<br>
-                    Kontakt:support@service.com
-                </footer>
-            </article>
-            <article class="Aufgabe">
-                <header>
-                    <h2>Aufgabe</h2>
-                    Titel: Dehnübung <br>
-                    Autor: Mr Fantastic <br>
-                </header>
-                Probieren sie bitte bis zum nächsten Mittwoch mit ihrer Zunge
-                ihren ...
-                <footer>
-                    <a href="Aufgaben.html">Lesen sie hier weiter</a><br>
-                    Copyright© Studinator<br>
-                    Kontakt:support@service.com
-                </footer>
-            </article>-->
-        </section>
-        <!--
-        <nav id="nav" style="position:fixed;right:0;top:50%;">
-            <header><h2>Navigation</h2></header>
-            <ul> 
-                <li><a href = "index.html">Startseite</a></li>
-                <li><a href = "News.html">News</a></li>
-                <li><a href = "Projekte.html">Projekte</a></li>
-                <li><a href="Aufgaben.html">Aufgaben</a></li>
-                <li><a href="NeuerArtikel.html">Neuen Artikel anlegen</a></li>
-            </ul>        
-        </nav>-->
-        <div id="totop"><a href="#top"> top</a></div>
+        <div class="row justify-content-end bg-light">
+            <div class="col">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Startseite</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="News.html">News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="Projekte.html">Projekte</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="Aufgaben.html">Aufgaben</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="NeuerArtikel.html">Neuen Artikel anlegen</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row mt-1">
+                <div class="col border border-danger rounded shadow p-3 mb-5 bg-light rounded">
+                    <article class="News">
+                        <div class="row border-bottom">
+                            <header>
+                                <h3>News</h3>
+                                Titel: Kind fällt ins Klo<br>
+                                Autor: Gundula Gausel
+                            </header>
+                        </div>
+                        <div class="row border-bottom">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                            takimata sanctus est Lorem ipsum dolor sit amet.
+                        </div>
+                        <div class="row">
+                            <footer>
+                                <a href ="News.html">Lesen sie hier weiter</a><br>
+                                Copyright© Studinator<br>
+                                Kontakt:support@service.com
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col border border-success shadow p-3 mb-5 bg-light rounded">
+                    <article class="Projekt">
+                        <div class="row border-bottom">
+                            <header>
+                                <h3>Projekt</h3>
+                                Titel: Chicken-Wing wiederbeleben<br>
+                                Autor: Colonel Sanders<br>
+                            </header>
+                        </div>
+                        <div class="row border-bottom">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                            takimata sanctus est Lorem ipsum dolor sit amet.
+                        </div>
+                        <div class="row">
+                            <footer>
+                                <a href="Projekte.html">Lesen sie hier weiter</a><br>
+                                Copyright© Studinator<br>
+                                Kontakt:support@service.com
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col border border-primary shadow p-3 mb-5 bg-light rounded">
+                    <article class="Aufgabe">
+                        <div class="row border-bottom">
+                            <header>
+                                <h3>Aufgabe</h3>
+                                Titel: Dehnübung <br>
+                                Autor: Mr Fantastic <br>
+                            </header>
+                        </div>
+                        <div class="row border-bottom">
+                            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                            sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est 
+                            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                            dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+                            takimata sanctus est Lorem ipsum dolor sit amet.
+                        </div>
+                        <div class="row">
+                            <footer>
+                                <a href="Aufgaben.html">Lesen sie hier weiter</a><br>
+                                Copyright© Studinator<br>
+                                Kontakt:support@service.com
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     </body>
 </html>
